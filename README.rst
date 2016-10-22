@@ -1,5 +1,5 @@
-leetcode solutions
+LeetCode Solutions
 ==================
 
-Centralized repository for my current leetcode online judge solutions
+Centralized repository for my current LeetCode Online Judge solutions.
 
