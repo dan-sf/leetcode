@@ -35,7 +35,7 @@ class Solution(object):
         return root
 
 if __name__ == '__main__':
-    from lib.tree_deserializer import *
+    from lib.tree_util import *
     t1 = deserialize('[1,3,2,5]')
     t2 = deserialize('[2,1,3,null,4,null,7]')
 

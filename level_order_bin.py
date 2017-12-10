@@ -1,6 +1,6 @@
 """ Problem statement: https://leetcode.com/problems/binary-tree-level-order-traversal-ii/ """
 
-from lib import tree_deserializer as t
+from lib import tree_util as t
 
 class Solution(object):
     def levelOrderBottom(self, root):

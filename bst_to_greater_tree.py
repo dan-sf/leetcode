@@ -1,6 +1,6 @@
 """ Problem statement: https://leetcode.com/problems/convert-bst-to-greater-tree/description/ """
 
-from lib.tree_deserializer import *
+from lib.tree_util import *
 
 # Definition for a binary tree node.
 class TreeNode(object):
@@ -55,13 +55,13 @@ if __name__ == '__main__':
 
     t = deserialize('[5,2,13]')
     s.convertBST(t)
-    assert serialize(t) == [18, 13, 20]
+    assert serialize(t) == '[18,20,13]'
 
     t = deserialize('[0,-3,2,-4,null,1]')
     s.convertBST(t)
-    assert serialize(t) == [3, 2, 3, 0, -4]
+    assert serialize(t) == '[3,0,2,-4,null,3]'
 
     t = deserialize('[4,2,6,1,3,5,7]')
     s.convertBST(t)
-    assert serialize(t) == [22, 13, 7, 18, 27, 25, 28]
+    assert serialize(t) == '[22,27,13,28,25,18,7]'
 

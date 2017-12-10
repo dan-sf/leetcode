@@ -1,6 +1,6 @@
 """ Problem statement: https://leetcode.com/problems/average-of-levels-in-binary-tree/description/ """
 
-from lib.tree_deserializer import *
+from lib.tree_util import *
 
 class Solution(object):
     def averageOfLevels(self, root):
