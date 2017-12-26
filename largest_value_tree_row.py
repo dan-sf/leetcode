@@ -20,6 +20,16 @@ class Solution(object):
         _traverse(root)
         return output
 
+    def largestValuesBFS(self, root):
+        """ Interesting BFS solution found in discusion, my solution uses DFS
+        for traversal """
+        maxes = []
+        row = [root]
+        while any(row):
+            maxes.append(max(node.val for node in row))
+            row = [kid for node in row for kid in (node.left, node.right) if kid]
+        return maxes
+
 def test(f, stree, expected):
     tree = deserialize(stree)
     actual = f(tree)
