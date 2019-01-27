@@ -14,7 +14,12 @@ class Solution(object):
             index += 1
         return index
 
-    # This code assumes only single digits...
+    def find_number(self, s):
+        for i in range(len(s)):
+            if s[i] in string.digits:
+                return i
+        return -1
+
     def decodeString(self, s):
         """
         :type s: str
@@ -23,14 +28,17 @@ class Solution(object):
         find_bracket = s.find('[')
         if find_bracket == -1:
             return s
-        prepend = s[0:find_bracket-1]
-        left_bracket = self.matching_bracket(s, find_bracket)
+
+        num_index = self.find_number(s)
+        prepend = s[0:num_index]
+        matched_bracket = self.matching_bracket(s, find_bracket)
         postpend = s[s.rfind(']')+1:]
-        multiplier = int(s[find_bracket-1])
+        multiplier = int(s[num_index:find_bracket])
+
         return prepend + \
                multiplier * \
-               self.decodeString(s[find_bracket+1:left_bracket]) + \
-               self.decodeString(s[left_bracket+1:s.rfind(']')+1]) + \
+               self.decodeString(s[find_bracket+1:matched_bracket]) + \
+               self.decodeString(s[matched_bracket+1:s.rfind(']')+1]) + \
                postpend
 
 if __name__ == '__main__':
@@ -42,7 +50,6 @@ if __name__ == '__main__':
     h('3[a2[c]]')
     h('2[abc]3[cd]ef')
     h('10[so]')
-
     h('one2[a]two')
     h('')
     h('test')
